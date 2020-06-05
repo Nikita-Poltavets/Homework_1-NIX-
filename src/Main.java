@@ -4,34 +4,43 @@ public class Main {
 
     public static void main(String[] args) {
 
-        first();
+        int[] array = {1, 2, 3, 4, 5};
 
-        //second();
+        System.out.println("|||||||Task 1|||||||");
+        first(4, 7);
 
-        //third();
+        System.out.println("||||||||Task 2|||||||");
+        second(2);
 
-        //fourth();
+        System.out.println("|||||||Task 3|||||||");
+        third(1, 2,30, 1, 3,20);
 
-        //fifth();
+        System.out.println("|||||||Task 4|||||||");
+        fourth(700, 2100);
 
-        //sixth();
+        System.out.println("|||||||Task 5|||||||");
+        fifth(10, 3 ,2);
 
-        //seventh();
+        System.out.println("|||||||Task 6|||||||");
+        sixth(8, 5);
 
-        //eighth();
+        System.out.println("|||||||Task 7|||||||");
+        seventh(1, 1, 2, 1);
 
-        //ninth();
+        System.out.println("|||||||Task 8|||||||");
+        eighth(1, 2, 2);
 
-        //tenth();
+        System.out.println("|||||||Task 9|||||||");
+        ninth(array);
 
-        //eleventh();
+        System.out.println("|||||||Task 10|||||||");
+        tenth(array);
+
+        System.out.println("|||||||Task 11|||||||");
+        eleventh(array);
     }
 
-    static void first(){
-        Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
-
+    static void first(int a, int b){
         int c = a;
         a = b;
         b = c;
@@ -40,34 +49,21 @@ public class Main {
         System.out.println(b);
     }
 
-    static void second(){
-        String getHours[] = new String[10];
+    static void second(int lesson){
+        int start = 9 * 60;
+        int lessonTime = 45;
+        int smallBrake = 5;
+        int bigBrake = 15;
 
-        getHours[0] = "9 45";
-        getHours[1] = "10 35";
-        getHours[2] = "11 35";
-        getHours[3] = "12 25";
-        getHours[4] = "13 25";
-        getHours[5] = "14 15";
-        getHours[6] = "15 15";
-        getHours[7] = "16 05";
-        getHours[8] = "17 05";
-        getHours[9] = "17 50";
+        int m = start + lesson * lessonTime;
+        m+= (lesson - 1) * smallBrake;
+        m+= (lesson - 1) / 2 * (bigBrake - smallBrake);
 
-        Scanner in = new Scanner(System.in);
-        int result = in.nextInt();
+        System.out.println(m / 60 + " " + m % 60);
 
-        System.out.println(getHours[result - 1]);
     }
 
-    static void third() {
-        Scanner in = new Scanner(System.in);
-        int firstHour = in.nextInt();
-        int firstMinute = in.nextInt();
-        int firstSecond = in.nextInt();
-        int secondHour = in.nextInt();
-        int secondMinute = in.nextInt();
-        int secondSecond = in.nextInt();
+    static void third( int firstHour, int firstMinute, int firstSecond, int secondHour, int secondMinute, int secondSecond) {
 
         int firstResult = (firstHour * 3600) + (firstMinute * 60) + firstSecond;
         int secondResult = (secondHour * 3600) + (secondMinute * 60) + secondSecond;
@@ -75,38 +71,19 @@ public class Main {
         System.out.println(Math.abs(firstResult - secondResult));
     }
 
-    static void fourth(){
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int m = in.nextInt();
-
+    static void fourth(int n, int m){
         System.out.println((m + n - 1) / n);
     }
 
-    static void fifth(){
-        Scanner in = new Scanner(System.in);
-        int h = in.nextInt();
-        int a = in.nextInt();
-        int b = in.nextInt();
-
+    static void fifth(int h, int a, int b){
         System.out.println(1 + (h - b - 1) / (a - b));
     }
 
-    static void sixth(){
-        Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
-
+    static void sixth(int a, int b){
         System.out.println((a * (a / b) + b * (b / a)) / (b / a + a / b));
     }
 
-    static void seventh(){
-        Scanner in = new Scanner(System.in);
-        int x1 = in.nextInt();
-        int x2 = in.nextInt();
-        int y1 = in.nextInt();
-        int y2 = in.nextInt();
-
+    static void seventh(int x1, int x2, int y1, int y2){
         if(x1 == y1 || x2 == y2) {
             System.out.println("YES");
         }
@@ -115,12 +92,7 @@ public class Main {
         }
     }
 
-    static void eighth(){
-        Scanner in = new Scanner(System.in);
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int c = in.nextInt();
-
+    static void eighth(int a, int b, int c){
         if(a == b && b == c)
             System.out.println(3);
         else if ((a == b && b != c) || (a != b && b == c) || (a == c && c != b)){
@@ -129,20 +101,10 @@ public class Main {
         else {
             System.out.println(0);
         }
-
     }
 
-    static void ninth(){
-        Scanner in = new Scanner(System.in);
-        int length = in.nextInt();
-
-        int[] array = new int[length];
-
+    static void ninth(int[] array){
         int count = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = in.nextInt();
-        }
 
         for (int i = 0; i < array.length; i++) {
             if(i != 0 && array[i] > array[i - 1])
@@ -152,17 +114,8 @@ public class Main {
         System.out.println(count);
     }
 
-    static void tenth(){
-        Scanner in = new Scanner(System.in);
-        int length = in.nextInt();
-
-        int[] array = new int[length];
-
+    static void tenth(int[] array){
         int count = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = in.nextInt();
-        }
 
         for (int i = 0; i < array.length; i++) {
             if((i != 0 & i != array.length - 1) && (array[i - 1] < array[i] & array[i] > array[i + 1]) ){
@@ -173,16 +126,8 @@ public class Main {
         System.out.println(count);
     }
 
-    static void eleventh(){
-        Scanner in = new Scanner(System.in);
-
-        int length = in.nextInt();
-        int[] array = new int[length];
+    static void eleventh(int[] array){
         int c;
-
-        for (int i = 0; i < array.length; i++) {
-            array[i] = in.nextInt();
-        }
 
         for (int i = 0; i < array.length; i += 2) {
             if(i == array.length - 1 &  array.length % 2 == 1){
